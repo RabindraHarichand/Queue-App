@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { TicketService } from "../services/ticket.service";
 
 export class TicketController {
-  //DI - WssService
+  // DI - WssService
   constructor(private readonly ticketService = new TicketService()) {}
 
   public getTickets = async (req: Request, res: Response) => {
@@ -28,7 +28,8 @@ export class TicketController {
 
   public ticketFinished = async (req: Request, res: Response) => {
     const { ticketId } = req.params;
-    res.json(this.ticketService.onFinished(ticketId));
+
+    res.json(this.ticketService.onFinishedTicket(ticketId));
   };
 
   public workingOn = async (req: Request, res: Response) => {
