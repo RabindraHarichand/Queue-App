@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
+import { TicketService } from "../services/ticket.service";
 
 export class TicketController {
   //DI - WssService
-  constructor() {}
+  constructor(private readonly ticketService: TicketService) {}
 
   public getTickets = async (req: Request, res: Response) => {
     res.json("getTickets");
@@ -17,7 +18,7 @@ export class TicketController {
   };
 
   public createTicket = async (req: Request, res: Response) => {
-    res.json("createTicket");
+    res.json(this.ticketService.createTicket());
   };
 
   public drawTicket = async (req: Request, res: Response) => {
