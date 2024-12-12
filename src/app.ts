@@ -18,6 +18,6 @@ function main() {
   WssService.initWss({ server: httpServer });
 
   httpServer.listen(envs.PORT, () => {
-    console.log("Server");
+    console.log(`Server running on port: ${envs.PORT}`);
   });
 }
