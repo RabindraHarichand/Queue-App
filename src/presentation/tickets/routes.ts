@@ -5,8 +5,7 @@ import { TicketService } from "../services/ticket.service";
 export class TicketRoutes {
   static get routes() {
     const router = Router();
-    const ticketService = new TicketService();
-    const ticketController = new TicketController(ticketService);
+    const ticketController = new TicketController();
 
     router.get("/", ticketController.getTickets);
     router.get("/last", ticketController.getLastTicketNumber);
